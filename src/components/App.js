@@ -18,7 +18,6 @@ const url = "http://localhost:6001/plants"
     setPlants([...plants, newData])
   }
 
-
   return (
     <div className="app">
       <Header />

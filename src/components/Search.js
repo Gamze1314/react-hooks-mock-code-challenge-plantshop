@@ -1,15 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Search({ onSearchPlant }) {
-  const [search, setSearch] = useState("");
-
-  function handleChange(e){
-    const userInput = e.target.value;
-    setSearch(userInput)
-    onSearchPlant(e)
-  }
-
-  console.log(search)
+function Search() {
 
   return (
     <div className="searchbar">
@@ -18,7 +9,6 @@ function Search({ onSearchPlant }) {
         type="text"
         id="search"
         placeholder="Type a name to search..."
-        onChange={handleChange}
       />
     </div>
   );

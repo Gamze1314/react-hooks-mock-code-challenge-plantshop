@@ -3,24 +3,13 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
-  const [showPlants, setShowPlants] = useState([]);
-
-  function searchPlantByName(e){
-    const searchTerm = e.target.value.toLowerCase();
-    console.log(searchTerm);
-    const filteredPlants = showPlants.filter((plant) =>
-      plant.name.toLowerCase().includes(searchTerm)
-    );
-
-    setShowPlants(filteredPlants);
-}
+function PlantPage({ plants , addNewPlant }) {
 
   return (
     <main>
-      <NewPlantForm setShowPlants={setShowPlants} />
-      <Search onSearchPlant={searchPlantByName} />
-      <PlantList setShowPlants={setShowPlants} showPlants={showPlants} />
+      <NewPlantForm addNewPlant={addNewPlant} />
+      <Search />
+      <PlantList plants={plants} />
     </main>
   );
 }
